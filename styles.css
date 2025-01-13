@@ -23,9 +23,10 @@ body {
 }
 
 .logo-text {
-    font-size: 72px;
+    font-size: clamp(40px, 8vw, 72px);
     margin-bottom: 30px;
     letter-spacing: -2px;
+    text-align: center;
 }
 
 .open-source {
@@ -41,7 +42,7 @@ body {
 .search-box {
     display: flex;
     align-items: center;
-    width: 584px;
+    width: min(584px, 90%);
     height: 46px;
     border: 1px solid #dfe1e5;
     border-radius: 24px;
@@ -70,6 +71,7 @@ body {
     font-size: 16px;
     margin: 0 8px;
     transition: all 0.2s ease-in-out;
+    width: 100%;
 }
 
 #searchInput:focus {
@@ -77,21 +79,22 @@ body {
 }
 
 .search-results {
-    max-width: 652px;
+    max-width: min(652px, 95%);
     margin: 20px auto;
 }
 
 .project-card {
-    padding: 20px 0;
+    padding: 20px;
     border-bottom: 1px solid #eee;
 }
 
 .project-card h2 {
     color: #1a0dab;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: normal;
     margin-bottom: 8px;
     cursor: pointer;
+    word-break: break-word;
 }
 
 .project-card h2:hover {
@@ -102,6 +105,7 @@ body {
     color: #4d5156;
     font-size: 14px;
     line-height: 1.58;
+    word-break: break-word;
 }
 
 .project-card a {
@@ -110,32 +114,33 @@ body {
     font-size: 14px;
 }
 
+.url {
+    color: #006621;
+    font-size: 12px;
+    display: block;
+    margin-bottom: 4px;
+    word-break: break-all;
+}
+
 .project-stats {
     display: flex;
-    gap: 15px;
+    flex-wrap: wrap;
+    gap: 12px;
     margin-top: 8px;
     color: #70757a;
     font-size: 12px;
 }
 
-.loading {
+.loading, .error, .no-results {
     text-align: center;
     padding: 20px;
     color: #666;
 }
 
 .error {
-    text-align: center;
-    padding: 20px;
     color: #d93025;
     background-color: #fce8e6;
     border-radius: 4px;
-}
-
-.no-results {
-    text-align: center;
-    padding: 20px;
-    color: #666;
 }
 
 .load-more {
@@ -154,4 +159,47 @@ body {
 
 .load-more:hover {
     background-color: #f1f3f4;
+}
+
+/* Media Queries */
+@media (max-width: 600px) {
+    .search-section {
+        margin-top: 10vh;
+    }
+
+    .project-stats {
+        gap: 8px;
+        font-size: 11px;
+    }
+
+    .project-card {
+        padding: 15px;
+    }
+
+    .project-card h2 {
+        font-size: 16px;
+    }
+
+    .project-card p {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 400px) {
+    .search-box {
+        height: 40px;
+    }
+
+    #searchInput {
+        font-size: 14px;
+    }
+
+    .search-icon {
+        font-size: 18px;
+    }
+
+    .project-stats {
+        flex-direction: column;
+        gap: 4px;
+    }
 } 
