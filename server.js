@@ -52,9 +52,9 @@ app.get('/api/search', async (req, res) => {
         
         res.json(response.data);
     } catch (error) {
-        console.error('Erreur API:', error.message);
+        console.error('API Error:', error.message);
         res.status(500).json({
-            error: 'Erreur lors de la recherche',
+            error: 'Search error',
             message: error.message
         });
     }

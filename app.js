@@ -12,7 +12,7 @@ async function searchProjects(page = 1) {
     }
 
     if (page === 1) {
-        projectsContainer.innerHTML = '<div class="loading">Recherche en cours...</div>';
+        projectsContainer.innerHTML = '<div class="loading">Searching...</div>';
     }
     
     isLoading = true;
@@ -34,7 +34,7 @@ async function searchProjects(page = 1) {
         
         if (data.items.length === 0) {
             if (page === 1) {
-                projectsContainer.innerHTML = '<div class="no-results">Aucun projet trouvé</div>';
+                projectsContainer.innerHTML = '<div class="no-results">No projects found</div>';
             }
             return;
         }
@@ -46,34 +46,33 @@ async function searchProjects(page = 1) {
                         <h2>${project.name}</h2>
                         <span class="url">${project.html_url}</span>
                     </a>
-                    <p>${project.description || 'Aucune description disponible'}</p>
+                    <p>${project.description || 'No description available'}</p>
                     <div class="project-stats">
-                        <span>⭐ ${project.stargazers_count.toLocaleString()} étoiles</span>
-                        <span>👁 ${project.watchers_count.toLocaleString()} observateurs</span>
+                        <span>⭐ ${project.stargazers_count.toLocaleString()} stars</span>
+                        <span>👁 ${project.watchers_count.toLocaleString()} watchers</span>
                         <span>🔄 ${project.forks_count.toLocaleString()} forks</span>
-                        <span>📝 ${project.language || 'Non spécifié'}</span>
+                        <span>📝 ${project.language || 'Not specified'}</span>
                     </div>
                 </div>
             `;
             projectsContainer.innerHTML += projectCard;
         });
 
-        // Ajouter le bouton "Voir plus" si il y a plus de résultats
         if (data.total_count > page * 10) {
             const loadMoreButton = document.createElement('button');
             loadMoreButton.className = 'load-more';
-            loadMoreButton.textContent = 'Voir plus de résultats';
+            loadMoreButton.textContent = 'Load more results';
             loadMoreButton.onclick = () => searchProjects(page + 1);
             projectsContainer.appendChild(loadMoreButton);
         }
 
     } catch (error) {
-        console.error('Erreur lors de la recherche:', error);
+        console.error('Search error:', error);
         if (page === 1) {
             projectsContainer.innerHTML = `
                 <div class="error">
-                    Une erreur est survenue lors de la recherche.
-                    Veuillez réessayer plus tard.
+                    An error occurred while searching.
+                    Please try again later.
                 </div>
             `;
         }
