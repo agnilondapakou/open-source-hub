@@ -1,0 +1,157 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background-color: #fff;
+}
+
+.container {
+    width: 100%;
+    padding: 20px;
+}
+
+.search-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15vh;
+}
+
+.logo-text {
+    font-size: 72px;
+    margin-bottom: 30px;
+    letter-spacing: -2px;
+}
+
+.open-source {
+    color: #4285f4;
+    font-weight: 400;
+}
+
+.hub {
+    color: #ea4335;
+    font-weight: 500;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    width: 584px;
+    height: 46px;
+    border: 1px solid #dfe1e5;
+    border-radius: 24px;
+    padding: 0 20px;
+    margin-bottom: 20px;
+    transition: box-shadow 0.2s ease-in-out;
+}
+
+.search-box:hover,
+.search-box:focus-within {
+    box-shadow: 0 1px 6px rgba(32,33,36,.28);
+    border-color: rgba(223,225,229,0);
+}
+
+.search-icon {
+    color: #9aa0a6;
+    font-size: 20px;
+    padding: 0 8px;
+}
+
+#searchInput {
+    flex: 1;
+    height: 100%;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    margin: 0 8px;
+    transition: all 0.2s ease-in-out;
+}
+
+#searchInput:focus {
+    background-color: #fff;
+}
+
+.search-results {
+    max-width: 652px;
+    margin: 20px auto;
+}
+
+.project-card {
+    padding: 20px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.project-card h2 {
+    color: #1a0dab;
+    font-size: 20px;
+    font-weight: normal;
+    margin-bottom: 8px;
+    cursor: pointer;
+}
+
+.project-card h2:hover {
+    text-decoration: underline;
+}
+
+.project-card p {
+    color: #4d5156;
+    font-size: 14px;
+    line-height: 1.58;
+}
+
+.project-card a {
+    color: #202124;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.project-stats {
+    display: flex;
+    gap: 15px;
+    margin-top: 8px;
+    color: #70757a;
+    font-size: 12px;
+}
+
+.loading {
+    text-align: center;
+    padding: 20px;
+    color: #666;
+}
+
+.error {
+    text-align: center;
+    padding: 20px;
+    color: #d93025;
+    background-color: #fce8e6;
+    border-radius: 4px;
+}
+
+.no-results {
+    text-align: center;
+    padding: 20px;
+    color: #666;
+}
+
+.load-more {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    background-color: #f8f9fa;
+    border: 1px solid #dfe1e5;
+    border-radius: 4px;
+    color: #1a73e8;
+    cursor: pointer;
+    font-size: 14px;
+    text-align: center;
+}
+
+.load-more:hover {
+    background-color: #f1f3f4;
+} 
