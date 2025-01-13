@@ -19,7 +19,13 @@ async function searchProjects(page = 1) {
     
     try {
         const response = await fetch(
-            `http://localhost:3000/api/search?q=${encodeURIComponent(searchInput)}&page=${page}&per_page=10`
+            `https://api.github.com/search/repositories?q=${encodeURIComponent(searchInput)}+is:public&sort=stars&order=desc&page=${page}&per_page=10`,
+            {
+                headers: {
+                    'Accept': 'application/vnd.github.v3+json',
+                    'User-Agent': 'Open-Source-Hub'
+                }
+            }
         );
         
         if (!response.ok) {
@@ -46,7 +52,7 @@ async function searchProjects(page = 1) {
                         <h2>${project.name}</h2>
                         <span class="url">${project.html_url}</span>
                     </a>
-                    <p>${project.description || 'No description available'}</p>
+                    <p>${truncateDescription(project.description)}</p>
                     <div class="project-stats">
                         <span>⭐ ${project.stargazers_count.toLocaleString()} stars</span>
                         <span>👁 ${project.watchers_count.toLocaleString()} watchers</span>
@@ -99,3 +105,9 @@ document.getElementById('searchInput').addEventListener('keypress', function(e) 
         searchProjects(currentPage);
     }
 }); 
+
+function truncateDescription(description, maxLength = 150) {
+    if (!description) return 'No description available';
+    if (description.length <= maxLength) return description;
+    return description.substring(0, maxLength).trim() + '...';
+} 
