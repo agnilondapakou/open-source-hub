@@ -5,14 +5,14 @@ Open Source Hub is a web application that allows users to search for open source
 ## Features
 
 - Search for open source projects using various parameters.
-- Filter results by programming language, issue labels, stars, forks, and last updated date.
+- Filter results by programming language, issue labels, stars, forks, and more.
 - Pagination for easy navigation through search results.
 - Caching for improved performance and reduced API calls.
 - Responsive design for optimal viewing on all devices.
 
 ## Live Demo
 
-You can access the live version of the application here: [Your Deployed Site Link](#)
+You can access the live version of the application here: [Open Source Hub](https://opensource-hub.netlify.app/)
 
 ## Getting Started
 
