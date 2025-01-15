@@ -18,6 +18,23 @@
             <div class="search-box">
                 <i class="material-icons search-icon">search</i>
                 <input type="text" id="searchInput" placeholder="Search for open source projects...">
+                <i class="material-icons help-icon" id="helpIcon">help_outline</i>
+            </div>
+
+            <div class="search-help" id="searchHelp">
+                <div class="help-content">
+                    <h3>Search Operators</h3>
+                    <ul class="operators-list">
+                        <li><code>@language</code> - Filter by language (@javascript)</li>
+                        <li><code>#label</code> - Filter by issue label (#good-first-issue)</li>
+                        <li><code>>stars</code> - Filter by stars (>1000)</li>
+                        <li><code>^forks</code> - Filter by forks (^500)</li>
+                        <li><code>~date</code> - Filter by update date (~2024-01)</li>
+                        <li><code>@/owner</code> - Filter by owner (@/microsoft)</li>
+                        <li><code>+topic</code> - Filter by topic (+react)</li>
+                    </ul>
+                    <p class="example">Example: react @javascript #help-wanted >1000</p>
+                </div>
             </div>
         </div>
 
