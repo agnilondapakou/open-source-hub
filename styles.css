@@ -8,6 +8,13 @@
 body {
     min-height: 100vh;
     background-color: #fff;
+    color: #000;
+}
+
+/* Styles pour le mode sombre */
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
 }
 
 .container {
@@ -50,6 +57,7 @@ body {
     padding: 0 20px;
     margin-bottom: 20px;
     transition: box-shadow 0.2s ease-in-out;
+    background-color: #fff;
 }
 
 .search-box:hover,
@@ -87,10 +95,12 @@ body {
 .project-card {
     padding: 20px;
     border-bottom: 1px solid #eee;
+    background-color: #1e1e1e;
+    border: 1px solid #444;
 }
 
 .project-card h2 {
-    color: #1a0dab;
+    color: #1a73e8;
     font-size: 18px;
     font-weight: normal;
     margin-bottom: 8px;
@@ -103,7 +113,7 @@ body {
 }
 
 .project-card p {
-    color: #4d5156;
+    color: #e0e0e0;
     font-size: 14px;
     line-height: 1.58;
     word-break: break-word;
@@ -128,14 +138,14 @@ body {
     flex-wrap: wrap;
     gap: 12px;
     margin-top: 8px;
-    color: #70757a;
+    color: #b0b0b0;
     font-size: 12px;
 }
 
 .loading, .error, .no-results {
     text-align: center;
     padding: 20px;
-    color: #666;
+    color: #e0e0e0;
 }
 
 .error {
@@ -183,8 +193,8 @@ body {
     padding: 8px 16px;
     border: 1px solid #dfe1e5;
     border-radius: 4px;
-    background: white;
-    color: #1a73e8;
+    background: #333;
+    color: #ffffff;
     cursor: pointer;
     font-size: 14px;
     min-width: 40px;
@@ -192,13 +202,13 @@ body {
 }
 
 .pagination-button:hover:not(:disabled) {
-    background-color: #f8f9fa;
+    background-color: #444;
     border-color: #dadce0;
 }
 
 .pagination-button.active {
     background-color: #1a73e8;
-    color: white;
+    color: #ffffff;
     border-color: #1a73e8;
 }
 
@@ -303,13 +313,14 @@ body {
     top: calc(100% + 10px);
     left: 50%;
     transform: translateX(-50%);
-    background: white;
+    background: #1e1e1e;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     padding: 20px;
     max-width: 400px;
     width: 90%;
     z-index: 1000;
+    color: #ffffff;
 }
 
 .search-help.visible {
@@ -317,7 +328,7 @@ body {
 }
 
 .help-content h3 {
-    color: #202124;
+    color: #ffffff;
     margin-bottom: 12px;
     font-size: 16px;
 }
@@ -330,7 +341,7 @@ body {
 
 .operators-list li {
     margin: 8px 0;
-    color: #5f6368;
+    color: #e0e0e0;
     font-size: 14px;
 }
 
@@ -345,9 +356,9 @@ body {
 
 .example {
     padding: 10px;
-    background: #f8f9fa;
+    background: #333;
     border-radius: 4px;
-    color: #5f6368;
+    color: #e0e0e0;
     font-size: 13px;
     margin-top: 10px;
 } 
